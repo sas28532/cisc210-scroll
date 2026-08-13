@@ -1,0 +1,25 @@
+CC = gcc
+CFLAGS = -Wall -Wextra
+
+INCLUDE = -I /home/pi/include
+LDFLAGS = -L /home/pi/lib -lsense -lm
+
+all: scroll
+
+scroll: main.o display.o input.o
+	$(CC) $(CFLAGS) -o scroll main.o display.o input.o $(LDFLAGS)
+
+main.o: main.c scroll.h
+	$(CC) $(CFLAGS) -c main.c $(INCLUDE)
+
+display.o: display.c scroll.h
+	$(CC) $(CFLAGS) -c display.c $(INCLUDE)
+
+input.o: input.c scroll.h
+	$(CC) $(CFLAGS) -c input.c $(INCLUDE)
+
+clean:
+	rm -f *.o scroll
+
+run: scroll
+	./scroll
