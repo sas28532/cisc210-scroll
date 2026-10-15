@@ -1,4 +1,4 @@
-Name: Sadiq
+Name: Sadiq Shafi
 
 This repository contains the starter files for the Pi Scrolling Display project.
 
@@ -12,7 +12,7 @@ Header files scroll.h and display.h
 
 Stubs for input.c
 
-A main.c that demonstrates display_letter functionality
+A main.c that includes display_letter functionality
 
 To compile:
 make
